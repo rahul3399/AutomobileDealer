@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="50470137-e09c-4341-99f1-5c5cec45ab46">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="6"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="custid" class="java.lang.String"/>
+	<parameter name="mob" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="vehname" class="java.lang.String"/>
+	<parameter name="vehno" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     servicebill.`Billid` AS servicebill_Billid,
+     servicebill.`Customerid` AS servicebill_Customerid,
+     servicebill.`Mobileno` AS servicebill_Mobileno,
+     servicebill.`Date` AS servicebill_Date,
+     servicebill.`Vehicleno` AS servicebill_Vehicleno,
+     servicebill.`PaymentType` AS servicebill_PaymentType,
+     servicebill.`SubAmount` AS servicebill_SubAmount,
+     servicebill.`discount` AS servicebill_discount,
+     servicebill.`Total` AS servicebill_Total
+FROM
+     `servicebill` servicebill]]>
+	</queryString>
+	<field name="servicebill_Billid" class="java.lang.Long"/>
+	<field name="servicebill_Customerid" class="java.lang.String"/>
+	<field name="servicebill_Mobileno" class="java.lang.String"/>
+	<field name="servicebill_Date" class="java.sql.Date"/>
+	<field name="servicebill_Vehicleno" class="java.lang.String"/>
+	<field name="servicebill_PaymentType" class="java.lang.String"/>
+	<field name="servicebill_SubAmount" class="java.lang.String"/>
+	<field name="servicebill_discount" class="java.lang.String"/>
+	<field name="servicebill_Total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="219" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0c20a2a1-6a3a-4de4-89ce-9e9c6b6df569" x="80" y="124" width="331" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[      Automobile Dealer And Service Management System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c27786a9-6029-404c-9881-93464824c370" x="134" y="164" width="209" height="25"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[          Mobile no:-9762137389]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="d2faab99-9086-4dba-81b2-ec5f70f10cb7" x="134" y="0" width="270" height="124"/>
+				<imageExpression><![CDATA["C:\\Users\\Dell\\Documents\\NetBeansProjects\\AutomobileDelar\\src\\Image\\ad.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="880331df-0470-4c15-a5f6-0ad054d81b5e" x="134" y="144" width="239" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Sr.no83/5 Shastrinagar,Kothrud,Pune-38  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3f9a9f66-9a76-483f-bad6-07edc3c6451a" x="424" y="10" width="119" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="03947508-83b0-4ef1-9939-d8fd6bca167e" x="145" y="0" width="259" height="75"/>
+				<textElement>
+					<font fontName="Times New Roman" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Service Invoice]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e2833eb0-89e6-40df-8822-a6e6dc86a72e" x="65" y="32" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{custid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="705f599b-9282-4453-8508-1f49d1af624e" x="65" y="66" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{mob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="52dffcf3-c0d4-44ca-8f2f-21b8efe95e89" x="258" y="32" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a8cbadc-b95f-425f-9b4e-70c356faae63" x="258" y="66" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{vehname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0c3daaa0-5104-455d-8555-e6e742ad863a" x="455" y="32" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{vehno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a084e46e-06fd-4b0c-a2ee-e20b1d3ef172" x="0" y="32" width="65" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cust-id:-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a084e46e-06fd-4b0c-a2ee-e20b1d3ef172" x="0" y="66" width="65" height="20"/>
+				<textElement/>
+				<text><![CDATA[Mobile no.:-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a084e46e-06fd-4b0c-a2ee-e20b1d3ef172" x="193" y="32" width="65" height="20"/>
+				<textElement/>
+				<text><![CDATA[Address:-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a084e46e-06fd-4b0c-a2ee-e20b1d3ef172" x="193" y="66" width="65" height="20"/>
+				<textElement/>
+				<text><![CDATA[Vehname:-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a084e46e-06fd-4b0c-a2ee-e20b1d3ef172" x="390" y="32" width="65" height="20"/>
+				<textElement/>
+				<text><![CDATA[Veh no:-]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="d07326f4-9073-49cd-a74e-35c8b28c506e" x="0" y="0" width="555" height="20" backcolor="#6699FF"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="975d26df-28fe-4be2-83ea-bf003732f2b3" x="225" y="0" width="95" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="247d9a30-0688-4d78-a620-1845713e641d" x="103" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[servicebill_discount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="ecae62be-ec21-4c5e-8760-66b6f682f113" x="103" y="27" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{servicebill_discount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
